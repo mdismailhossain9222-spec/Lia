@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #0a0807;
+  --color-coal: #151009;
+  --color-cream: #f2e7d5;
+  --color-smoke: #8d8172;
+  --color-ember: #e2703a;
+  --color-flame: #f2a35c;
+  --color-wine: #7a2f16;
+
+  --animate-marquee: marquee 32s linear infinite;
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  background: #0a0807;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: #e2703a;
+  color: #0a0807;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0807;
+}
+::-webkit-scrollbar-thumb {
+  background: #2c231a;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e2703a;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.75) sepia(0.4);
+  cursor: pointer;
+}
+
+@media (pointer: fine) {
+  body,
+  a,
+  button,
+  select,
+  input,
+  [data-hover] {
+    cursor: none;
+  }
+}
+
+.text-outline {
+  -webkit-text-stroke: 1.5px rgba(242, 231, 213, 0.3);
+  color: transparent;
+}
